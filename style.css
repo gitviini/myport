@@ -1,0 +1,201 @@
+@font-face {
+    font-family: 'Pacifico';
+    src: url(Pacifico-Regular.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+html, body{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #678;
+}
+header{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    z-index: 1;
+}
+header ul{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+header ul li{
+    list-style: none;
+}
+#menu{
+    display: block;
+    width: 25px;
+    height: 25px;
+    padding: 15px;
+    cursor: pointer;
+    order: 2;
+}
+#menu div, #menu div:before, #menu div:after{
+    position: relative;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ddd;
+    transition: 0.2s;
+}
+#menu div:before{
+    top: 10px;
+}
+#menu div:after{
+    top: 19px;
+}
+#menu.click div{
+    height: 0;
+}
+#menu.click div:before{
+    transform: rotate(45deg);
+}
+#menu.click div:after{
+    top: 8px;
+    transform: rotate(-45deg);
+}
+#menubox{
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 60px;
+    width: 25%;
+    min-width: 200px;
+    height: calc(100% - 60px);
+    background-color: rgb(0,0,0,0.2);
+    clip-path: circle(0% at 100% 0);
+    transition: 0.5s;
+}
+#menubox ul{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 50%;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+#menubox ul a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 0 2px 0;
+    border-width: 0;
+}
+#menubox ul a:hover{
+    margin: 0px 0;
+    border-bottom: 2px solid #fff;
+}
+#menu.click + #menubox{
+    clip-path: circle(200% at 0 0);
+}
+#logo:before{
+    content: '';
+    position: relative;
+    float: left;
+    display: block;
+    background-image: url("logo.svg");
+    background-size: 50px;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+#logo{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    color: #ddd;
+    font-weight: 100;
+    font-size: 22px;
+    font-family: 'Pacifico';
+}
+main{
+    position: relative;
+    top: 60px;
+    display: block;
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow: hidden scroll;
+    z-index: 0;
+}
+section{
+    display: flex;
+    width: calc(100% - 80px);
+    height: 100%;
+    grid-gap: 10px;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 40px;
+}
+.title{
+    font-family: monospace;
+    color: #ddd;
+    font-size: 40px;
+}
+.title:before{
+    content: '.';
+}
+.buttons, .buttons:after{
+    position: relative;
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #d23;
+    margin: 0 0 10px 0;
+}
+.buttons:after{
+    left: 20px;
+    background-color: #da0;
+}
+.box{
+    display: block;
+    padding: 20px;
+    min-width: 200px;
+    width: calc(100% - 40px);
+    max-width: 500px;
+    border-radius: 10px;
+    background-color: rgb(0,0,0,0.4);
+    box-shadow: 10px 10px 0 rgb(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    color: #fff;
+}
+.box h1{
+    font-family: Arial, sans-serif;
+    margin: 0 0 10px 0;
+}
+.box p{
+    font-family: Arial, sans-serif;
+    word-break: break-word;
+    line-height: 22px;
+}
+#sobre{
+    background-color: #789;
+}
+@media screen and (max-width: 650px){
+    #menubox{
+        width: 100%;
+        background-color: rgb(0,0,0,0.4);
+        backdrop-filter: blur(5px);
+    }
+}
