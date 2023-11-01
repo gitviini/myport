@@ -161,6 +161,7 @@ section{
     font-family: monospace;
     color: #ddd;
     font-size: 40px;
+    font-size: 5vh;
 }
 .title:before{
     content: '.';
@@ -210,26 +211,33 @@ section{
     background-color: #b5838d;
 }
 .space{
-    display: flex;
+    display: grid;
     width: 100%;
     height: 50%;
-    flex-flow: row nowrap;
-    justify-content: space-around;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
+    justify-content: space-evenly;
     align-items: center;
 }
 .card{
-    display: block;
-    width: 30%;
+    display: flex;
+    width: 100%;
     height: 100%;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: #ddd;
+    color: #123;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     border-radius: 10px;
+    cursor: pointer;
     transition: 0.2s;
 }
-.card:after{
+.card::before{
     position: relative;
     content: '';
     display: block;
-    border-radius: 10px 10px 0 0;
     width: 100%;
     height: 70%;
     background-size: 110%;
