@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=width-device, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="logo.svg" type="image/x-icon">
 	<title>PORT</title>
 </head>
 <style type="text/css">
@@ -13,17 +14,18 @@
 		<nav>
 			<ul>
 				<li id="menu"><div></div></li>
-				<li id="menubox">
-					<ul>
-						<li><a href="#praque">Pra quê?</a></li>
-						<li><a href="#sobre">sobre</a></li>
-						<li><a href="#experiências">experiências</a></li>
-					</ul>
-				</li>
 				<li id="logo">port</li>
+				<li></li>
 			</ul>
 		</nav>
 	</header>
+	<div id="menubox">
+		<ul>
+			<li><a href="#praque">Pra quê?</a></li>
+			<li><a href="#sobre">sobre</a></li>
+			<li><a href="#experiências">experiências</a></li>
+		</ul>
+	</div>
 	<main>
 		<section id="praque">
 			<h1 class="title">Pra quê?</h1>
@@ -41,10 +43,10 @@
 		</section>
 		<section id="experiências">
 			<h1 class="title">experiências</h1>
-			<div class="box">
-				<div class="buttons"></div>
-				<h1>ETE Porto Digital</h1>
-				<p>Estudo desenvolvimento de sistemas há um ano e meio. Adoro essa experiências pois a escola se localiza perto do Marco zero do recife.</p>
+			<div class="space">
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
 			</div>
 		</section>
 	</main>
@@ -53,6 +55,7 @@
 	let menu = document.querySelector('#menu')
 	menu.addEventListener('click',()=>{
 		menu.classList.toggle('click')
+		document.querySelector('#menubox').classList.toggle('click')
 	})
 </script>
 </html>
